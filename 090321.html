@@ -1,3 +1,68 @@
 <html>
-    <h1>Week 1 Recap</h1>
+<header
+    style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 3.5rem; color: #82aaa3;">
+    Week 1</header>
+<em style="font-family: 'IBM Plex Sans', sans-serif; color: #7e7e7e; font-size: small;">The Inspect Tool &#8211 Friday,
+    Sep. 3, 2021</em>
+<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;">During development, us
+    programmers have to
+    put on our investigator hats; or rather, today we'll be wearing our
+    <i>inspect</i>-igator hat. Sure, Chrome provides <a href="https://developer.chrome.com/docs/devtools/open/">official
+        documentation</a> that gives clear step-by-step instructions for using their DevTools and Inspect feature, but
+    why would you read
+    that when you can listen to me, someone with a brand-new domain name and a week-and-a-half of web development under
+    their belt?<br><br>We'll be focusing specifically on the <i>Chrome</i> Inspect tool because that is the browser I
+    prefer
+    to use. It's a feature I learned to use long before ever studying computer science&#8211 in middle school, we used
+    it to change the text on the official county website for various, devious reasons. But nowadays I use it to find
+    color values, certain font names, and understand web layouts, no longer to convince my mom that it <i>actually
+        is</i> a snow day.<br><br>My go-to way to access this feature is to right click while on a web page and select
+    "Inspect" from the drop-down, which opens the
+    Chrome DevTools panel. Then click the Inspect icon:
+</p>
+<div style="text-align: center;">
+    <img src="https://developer-chrome-com.imgix.net/image/admin/yDROFVw6p2poGhkOdFKu.png?auto=format&w=1600"
+        height="50%">
+    <img src="https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/2canqdvrgnHBayY1VsLM.png?auto=format&w=1600"
+        height="50%" style="margin-top: 6px;">
+</div>
+<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;"> Now, clicking on an element
+    will show us where in
+    the Document Object Model (<a href="https://javascript.info/dom-nodes">DOM</a>) tree that object occurs.
+    Essentially, this DOM tree outlines the logical structure of our HTML, with its 'cascading' format. HTML tags are
+    treated as objects, and anything nested within a tag is its child. This makes things simple for pinpointing specific
+    webpage elements. For example, I visited <a href="https://twodee.org/blog/">twodee.org</a>
+    and felt quite inspired. I inspected the text beneath the postTitle (CS 347: Lab 3 &#8211 More HTML) and found a tag
+    I've never seen before, the &lt;em&gt; tag. This is a tag for emphasized text. Well, that doesn't seem too crazy,
+    because we can use &lt;i&gt; to italicize the text and get the same thing right? <em>Wrong!</em>
+</p>
+<div style="text-align: center;">
+    <img src="L1-em.jpg" height="50%"
+        style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <img src="L1-color.jpg" height="50%"
+        style="margin-left: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+</div>
+<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;">
+    <br>The &lt;em&gt; tag is especially cool because with the use of a screen reader, any words within the tab will be
+    verbally stressed. This way, we can make our message more accessible to any user that is visually imapaired and
+    relies on assistence. Here, I use &lt;em&gt; underneath the page title to describe what the blog post is about as
+    well as the date: <code style="color: #727171; background-color: #e9e9e9;">&lt;em style="font-family: 'IBM Plex Sans', sans-serif; color: #7e7e7e; font-size: small;"&gt;The Inspect Tool &#8211 Friday,
+        Sep. 3, 2021&lt;/em&gt;</code><br><br>Another cool accessibility feature is how DevTools will indicate whether
+    or not the color contrast is large
+    enough. Essentially, this helps users with color blindess or poor eyesight, as a higher contrast between text and
+    its background makes it easier to read. In the screenshot above, I pulled the red/salmon color from the
+    aforementioned postTitle. The checkmark next to the 3.71 indicates that DevTools approves of color
+    balance.<br><br>One more feature of the Chrome DevTools I want to touch on is the ability to make stylistic changes
+    without having
+    to update the actual code; if I want to experiment with different colors for my text or backgrounds, I can change
+    the values within the DevTools <i>Styles</i> tab and see it change without needing to save and compile code. I
+    didn't know that until now! Though I can wrap my brain better around the UI-adjacent features of DevTools, the
+    documentation after the <a href="https://developer.chrome.com/docs/devtools/dom/">DOM section</a> dives into network
+    activity, cookies storage, and debugging &#8211 all extremely helpful devices for when your blog traffic is more
+    than one person a week. Who knows, maybe I'll write a post about that in the future.<br><br>Until then, DOM-inate the rest of your day!
+</p>
+<div style="text-align: right;">
+    <img src="cow.png" height="15%">
+</div>
 </html>
