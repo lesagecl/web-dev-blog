@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <nav>
+        <ul style="list-style-type: none; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 3;">
+            <li style="float: right;"><a href="index.html"
+                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">Home</a></li>
+            <li style="float: right;"><a href="https://www.linkedin.com/in/chelsea-le-sage/"
+                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">LinkedIn</a></li>
+            <li style="float: right;"><a href="https://github.com/lesagecl/web-dev-blog"
+                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header
+    style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 3.5rem; color: #82aaa3;">
+    Week 2</header>
+<em style="font-family: 'IBM Plex Sans', sans-serif; color: #7e7e7e; font-size: small;">Templates & SEO &#8211 Friday,
+    Sep. 10, 2021</em>
+<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem !important;">After a quick Google
+    search of
+    "How to write better HTML", the <a
+        href="https://msandrini.medium.com/how-to-write-html-in-2021-b94196f4e165">article I found</a> basically advised
+    front-end web developers to avoid falling into the routine of
+    &lt;div&gt; and &lt;span&gt;, and rather to make use of the templates offered by HTML. Two benefits of doing so
+    included "Search Engine Optimisation, of course" and that "Template structures are more identifiable and
+    therefore more readable."<br><br>Search Engine Optimization? Of course! Wait... what's Search Engine Optimization
+    (SEO)? According to <a href=https://html.com/seo>HTML documentation</a>, it refers to the process by which
+    developers make a website appear higher up in results from a search engine. Working on the SEO improves a website's
+    traffic, as more users tend to click on the first few search results they see. As Google is the most popular search
+    engine, a website optimized for Google will perform well, allowing for more search traffic.<br><br>For example,
+    Google's search algorithm favors mobile-friendly websotes over those that are not. The more portable your website
+    is, the more traffic you may get!</p>
+<div style="text-align: center;">
+    <img src="https://i.pinimg.com/564x/68/89/42/688942f32f6ba40e6313b1d71004c63f.jpg" height="40%">
+    <img src="https://i.pinimg.com/originals/8e/4a/c9/8e4ac9009d4670d51548e5e2736f1691.gif" height="40%">
+</div>
+<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;">The ultimate goal of search
+    engines like Google is to return results that are relevant, accessible, and high-quality. SEO can be achieved in a
+    variety of ways. A couple of these are by implementing Google Analytic tools&#8211which track site metrics&#8211and
+    by having <i>other</i> websites backlink your own, thus growing your credibility. But I wanted to focus on the
+    HTML-specific qualities of SEO.<br><br>For example, the &lt;meta&gt; tag is used to define metadata about key
+    concepts of an
+    HTML document. Though this metadata does not appear on the screen, it is used by browsers, search engines, and other
+    webservices to indicate the content of your webpage. Consider the following code:<br><br><code
+        style="color: #727171; background-color: #e9e9e9;">&lt;head&gt;<br>
+        &emsp;&lt;meta charset="UTF-8"&gt;<br>
+        &emsp;&lt;meta name="description" content="Week 2 blogpost"&gt;<br>
+        &emsp;&lt;meta name="keywords" content="HTML, SEO, web traffic"&gt;<br>
+        &emsp;&lt;meta name="author" content="Chelsea Le Sage"&gt;<br>
+        &lt;/head&gt;</code><br><br>The <code>charset</code> attribute indicates which character encoding is used for
+    the document. Meanwhile, the <code>name</code> attribute can indicate a few values, like an author, description, or
+    key words
+    for the document. Including these tags contribute to SEO!<br><br>So now, using that code for metadata we can follow
+    a typical HTML template, because recall that templates improve readability:<br><br><code
+        style="color: #727171; background-color: #e9e9e9;">
+        &lt;!doctype html&gt;<br>
+        &emsp;&lt;html&gt;<br>
+        &emsp;&lt;head&gt;<br>
+        &emsp;&emsp;&lt;title&gt;Web Dev Blog&lt;/title&gt;<br>
+        &emsp;&emsp;&lt;meta charset="UTF-8"&gt;<br>
+        &emsp;&emsp;&lt;meta name="description" content="Week 2 blogpost"&gt;<br>
+        &emsp;&emsp;&lt;meta name="keywords" content="HTML, SEO, web traffic"&gt;<br>
+        &emsp;&emsp;&lt;meta name="author" content="Chelsea Le Sage"&gt;<br>
+        &emsp;&lt;/head&gt;<br>
+        &emsp;&lt;body&gt;<br>
+        &emsp;&emsp;Here's some blog content!<br>
+        &emsp;&lt;/body&gt;<br>
+        &emsp;&lt;/html&gt;
+</code><br><br>This template structure is important because &lt;div&gt; and &lt;span&gt; are not <i>semantic</i> HTML
+    elements, meaning that they do not tell the computer anything about their content; they are too general purpose. But
+    keep in mind that semantic tags, however, do not offer any style specifications. So with semantic tags providing us
+    document structure, meta tags specifically supplying metadata to search engines, and with a mobile-portable website,
+    traffic should start flowing! Just make sure not to let the fame get to your head.
+</p>
+
+<div style="text-align: right;">
+    <img src="smiley-face.png" height="10%">
+</div>
+
+</html>
