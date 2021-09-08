@@ -1,0 +1,54 @@
+header {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #82aaa3;
+}
+
+em {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #7e7e7e;
+    font-size: small;
+}
+
+pre {
+    width: max-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #727171;
+    background-color: #e9e9e9;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #727171;
+    font-size: 1.2rem;
+}
+
+.navli {
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navhref {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    color: #7e7e7e;
+}
+
+.week {
+    font-size: 1.5rem;
+    color: #dbb858;
+}
+
+.description {
+    font-size: 1rem;
+    color: #727171;
+}
+
+.blogimg {
+    max-height: 20rem;
+    width: auto;
+}

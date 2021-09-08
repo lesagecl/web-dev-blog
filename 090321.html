@@ -1,25 +1,23 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <title>Week 1</title>
+    <link rel="stylesheet" href="style.css">
     <nav>
-        <ul
-            style="list-style-type: none; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 3;">
-            <li style="float: right;"><a href="index.html"
-                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">Home</a></li>
-            <li style="float: right;"><a href="https://www.linkedin.com/in/chelsea-le-sage/"
-                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">LinkedIn</a></li>
-            <li style="float: right;"><a href="https://github.com/lesagecl/web-dev-blog"
-                    style="display: block; padding: 3px; text-decoration: none; color: #7e7e7e;">GitHub</a></li>
+        <ul style="list-style-type: none; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
         </ul>
         </div>
     </nav>
 </head>
-<header
-    style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 3.5rem; color: #82aaa3;">
+<header>
     Week 1</header>
-<em style="font-family: 'IBM Plex Sans', sans-serif; color: #7e7e7e; font-size: small;">The Inspect Tool &#8211 Friday,
+<em>The Inspect Tool &#8211 Friday,
     Sep. 3, 2021</em>
-<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;">During development, us
+<p>During development, us
     programmers have to
     put on our investigator hats; or rather, today we'll be wearing our
     <i>inspect</i>-igator hat. Sure, Chrome provides <a href="https://developer.chrome.com/docs/devtools/open/">official
@@ -37,11 +35,11 @@
 </p>
 <div style="text-align: center;">
     <img src="https://developer-chrome-com.imgix.net/image/admin/yDROFVw6p2poGhkOdFKu.png?auto=format&w=1600"
-        height="50%">
+        class="blogimg">
     <img src="https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/2canqdvrgnHBayY1VsLM.png?auto=format&w=1600"
-        height="50%" style="margin-top: 6px;">
+        class="blogimg">
 </div>
-<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;"> Now, clicking on an element
+<p> Now, clicking on an element
     will show us where in
     the Document Object Model (<a href="https://javascript.info/dom-nodes">DOM</a>) tree that object occurs.
     Essentially, this DOM tree outlines the logical structure of our HTML, with its 'cascading' format. HTML tags are
@@ -52,13 +50,13 @@
     because we can use &lt;i&gt; to italicize the text and get the same thing right? <em>Wrong!</em>
 </p>
 <div style="text-align: center;">
-    <img src="L1-em.jpg" height="50%"
+    <img src="L1-em.jpg" class="blogimg"
         style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <img src="L1-color.jpg" height="50%"
+    <img src="L1-color.jpg" class="blogimg"
         style="margin-left: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 
 </div>
-<p style="font-family: Arial, Helvetica, sans-serif; color: #727171; font-size: 1.2rem;">
+<p>
     <br>The &lt;em&gt; tag is especially cool because with the use of a screen reader, any words within the tab will be
     verbally stressed. This way, we can make our message more accessible to any user that is visually imapaired and
     relies on assistence. Here, I use &lt;em&gt; underneath the page title to describe what the blog post is about as
@@ -79,7 +77,7 @@
     the rest of your day!
 </p>
 <div style="text-align: right;">
-    <img src="smiley-face.png" height="10%">
+    <img src="smiley-face.png" style="height: 5rem">
 </div>
 
 </html>
