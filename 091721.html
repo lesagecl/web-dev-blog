@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Week 3</title>
+    <link rel="stylesheet" href="style.css">
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 3</header>
+<em>Media Queries &#8211 Friday,
+    Sep. 17, 2021</em>
+<p>Last week we talked about Search Engine Optimization, and one of the rules of optimization was having a site that is
+    mobile-friendly. To achieve this we must use a responsive CSS technique called <i>Media Query</i>. During my
+    research of this topic, two sources I consulted were <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Mozilla's
+        documentation</a> and <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">W3 Schools</a>.
+    <br><br>Media queries make it so that a webpage is adaptable for multiple screen dimensions, resolutions, and so on.
+    As part of its syntax, the <i>media type</i> can optionally be defined to describe the type of device the code chunk
+    is being made suitable for. This includes <code>all</code>, <code>print</code>, <code>screen</code>, and
+    <code>speech</code>. Let's get into some code, shall we?
+</p>
+<div style="text-align: center;">
+    <img src="https://elements-cover-images-0.imgix.net/5503a40c-978d-4d7f-8fcf-413fbc3e5efe?auto=compress%2Cformat&fit=max&w=1370&s=9e27da880a6fe2cf9fc5d512ff901383"
+        class="blogimg">
+</div>
+<p>Media features always evaluate to either true or false. Below showcases how media features can have a range, min or
+    max, which defines a minimum or maximum condition. For example:</p>
+<div style="display: flex; justify-content: center;">
+    <pre>
+@media screen (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+}</pre>
+</div>
+<p>This makes it so that when the user's browser window is less than 600 pixels, the background color changes to red.
+    Notice that above uses the <code>screen</code> and <code>max-width</code> specifications. Multiple types and
+    features can be specified following <code>@media</code> for particular cases in which the web page must be able to
+    adapt to. </p>
+<div style="display: flex; justify-content: center;">
+    <pre>
+@media only screen and (min-width: 475px) and (orientation: landscape) {
+    &lt;!-- some code--&gt;
+}
+</pre>
+</div>
+<p>Above, any style specifications would be limited to a device with a screen, whose brower window is at least 475
+    pixels and in the landscape orientation. One thing I learned from Chapter 7 of <a
+        href="https://allover.twodee.org/responsive-web-design/media-query/">All Over the Web</a> which was not
+    discussed in the aforementioned documentation is that within your CSS file, a media query must occur after a rule
+    set, if not to be overwritten by the rule set. Thus it makes sense to declare most media queries at the bottom of
+    the css file. One important philosophy introduced by this chapter of the text is that of the <i>mobile-first</i>
+    development approach to web pages; I agree with the logic that a web page that works well on small screens probably
+    works well on larger screens, and not the other way around.<br><br>
+    Connecting this newfound knowledge to my <a href="090321.html">Week 1 blog</a> about the Chrome Developer Tools,
+    it's important to note that it can be used to preview what the web page looks like at different screen layouts; the
+    Toggle Device Toolbar widget allows you to preview the page on various devices, from iPhone to iPad, and even those
+    that must not be named (*shudder* Android devices).<br><br>Much to think about while planning the creation of my
+    next WebDev project! Till next time, toodeloo!</p>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
