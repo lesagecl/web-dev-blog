@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 4</header>
+<em>Bootstrap &#8211 Friday,
+    Sep. 24, 2021</em>
+<p>What is Bootstrap? Well, it's not just a strap at the back of a pair of boots. Bootstrap is a UI framework that takes
+    a mobile-first web development approach (hey, remember that from the last blog post?). So let's begin to understand
+    how
+    it helps by taking a look at the <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap
+        documentation</a>.</p>
+<div style="text-align: center;">
+    <img src="https://cdn.dribbble.com/users/752741/screenshots/7811493/media/4fdbbcfa585a2e75d083f721e5554918.gif"
+        class="blogimg">
+</div>
+<p>Bootstrap is a library of UI components, content formats, forms, and other such layout tools. Many of its
+    components require JavaScript plugins, so it's necessary that the <code>&lt;script&gt;</code> tag be specified
+    within
+    the <code>&lt;body&gt;</code>. Similarly to what we discussed in Week 2, Bootstrap also recommends following a
+    template which meets development standards, includling the <code>&lt;meta&gt;</code> tags. Everything's coming full
+    circle! We'll start by loading the Bootstrap CSS into our <code>&lt;head&gt;</code>, before all other styling
+    sheets:</p>
+<div style="display: flex; justify-content: center;">
+    <pre>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"&gt;</pre>
+</div>
+<p>By default, Bootstrap employs a grid system. As such, it offers three main types of containers, the
+    default of which (<code>.container</code>) is responsive, with its max-width changing at each breakpoint. So rather
+    than concernng ourselves with CSS styling for a container, Bootstrap does the work for us (given we have all the
+    correct imports in place to use it):</p>
+<div style="display: flex; justify-content: center;">
+    <pre>
+&lt;div class="container"&gt;
+    &lt;!-- Content here --&gt;
+&lt;/div&gt;</pre>
+</div>
+<p> You'll notice that breakpoints are a big deal in Bootstrap. A breakpoint is essentially a designer-specified width
+    that determines how responsive the layout is across device screens/viewport widths. These breakpoints can also be
+    called <i>grid tiers</i>, ranging from extra small to extra extra large. This breakpoint sizing helps uphold
+    consistency by way of scaling for common device/viewport dimensions. Columns are also available within Bootstrap and
+    make use of the grid system, as its hierarchy system goes container &#8594; row &#8594; column &#8594; content. Both
+    Bootstrap's grid and column layouts rely on a flexbox architecture.</p>
+<div style="text-align: center;">
+    <img src="https://cdn.dribbble.com/users/775038/screenshots/9447549/media/fb78f52700aabeecd6298f0fce0bcd64.jpg?compress=1&resize=1600x1200"
+        class="blogimg">
+</div>
+<p>One area of Bootstrap I have experience in is its form control options; by default, Bootstrap builds a form
+    vertically, but there are also horizontal and inline form layouts. Bootstrap's global styling for forms means
+    that most form labels and controls should be wrapped in <code>&lt;div class="form-group"&gt;</code> and that
+    <code>.form-control</code> should be added to all input and selection items. In this example we are also using
+    <code>class="mb-3"</code> to have a margin bottom (mb) on each element. Here's what the code would look like
+    for a vertical form that asks for a username, password, and a checkbox if the user wants their credentials to be
+    saved, as well as a login button:
+</p>
+<div style="display: flex; justify-content: center;">
+    <pre>
+&lt;form&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="userID" class="form-label">Username&lt;/label&gt;
+        &lt;input type="username" class="form-control" id="userID" aria-describedby="userNameHelp"&gt;
+        &lt;div id="userNamelHelp" class="form-text">Your Duke's email eID&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="userPW" class="form-label">Password&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="userPW"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3 form-check"&gt;
+        &lt;input type="checkbox" class="form-check-input" id="rememberUser"&gt;
+        &lt;label class="form-check-label" for="remmeberUser">Remember me next time&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="login" class="btn btn-primary">Login&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+</div>
+<p>With the above code, what we get should look something like this:</p>
+<div style="text-align: center;">
+    <img src="BootstrapLogin.jpg" class="blogimg"
+        style="border-radius: 4px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+</div>
+<p>How easy! No finnicky styling, or element alignment, just good ol' trusy Bootstrap. And there's so, so much more to
+    it to explore! Too much more! This entire blog could be dedicated to the wonders of not
+    having to fiddle as much with CSS, but we just don't have time for that. It's a shame we can't use Bootstrap for
+    Project 1 but I guess that would just make things too easy, eh?</p>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
+
+</html>
