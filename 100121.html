@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 5</header>
+<em>jQuery (part 1) &#8211 Friday,
+    Oct. 1, 2021</em>
+
+<body>
+    <p>Alright, alright, it's week 5. By now we know the drill. The lovely sources this blog references are the <a
+            href="https://api.jquery.com/">jQuery API documentation</a> and ole reliable, a <a
+            href="https://www.w3schools.com/jquery/default.asp">W3 schools tutorial</a>. Soooo, what is jQuery? Simply
+        put, it is a JavaScript library. Without JavaScript there is no jQuery. jQuery simplifies JavaScript. JavaScript
+        and jQuery sitting in a tree,
+        W-E-B-D-E-V-E-L-O-P-I-N-G. First and foremost, to have a copy of jQuery in your code, it must be included
+        within <code>&lt;script&gt;</code> tags:</p>
+    <div class="code-container">
+        <pre>
+&lt;body&gt;
+    &lt;script src="jquery.js"&gt;&lt;/script&gt;
+    &lt;script&gt;  
+        // code goes here      
+    &lt;/script&gt;
+&lt;/body&gt;</pre>
+    </div>
+    <p>Note that the downloaded jQuery file should be in the same directory as the pages using it. The beauty of jQuery
+        is that it
+        takes common, lengthy tasks of JavaScripts and wraps them into methods.
+        Essentially, in jQuery you query HTML elements and perform some action on that element. To do so, the syntax is
+        <b>$(selector).action()</b>
+    </p>
+    <p>The <b>$</b> accesses jQuery, the <b>(selector)</b> queries/finds the desired HTML elements, and lastly
+        <b>.action()</b> is the jQuery action to be performed. For example: <b>$(".student").show()</b> shows all
+        HTML elements with the class "student". For the most part, jQuery uses CSS to select elements, so a strong
+        knowledge of CSS and JavaScript are needed before diving deep into jQuery.
+    </p>
+    <div style="text-align: center;">
+        <img src="https://media.edutopia.org/styles/responsive_2880px_original/s3/masters/d7_images/cover_media/deisley-169hero-library-istock.jpg"
+            class="blogimg" style="height: 50vw">
+    </div>
+    <p>In order to prevent jQuery from running before the document is loaded, it's common to explicitly indicate when to
+        run the actions by nesting jQuery within a ready function:</p>
+    <div class="code-container">
+        <pre>
+$(document).ready(function(){
+    // jQuery methods go here      
+});</pre>
+    </div>
+    <p>So now we've ensured that our document is fully loaded before we perform actions on it. Phew! Now, how do we
+        trigger these actions we want to perform? jQuery can fire an action based off of a list of events. Events can
+        include a mouse click, keypress, scrolling, a form submit, all of those nice DOM events. Below is an example of
+        how a function is passed to an event. In this case, when a user double clicks the button element, the element is
+        hidden:</p>
+    <div class="code-container">
+        <pre>
+$(".button").dblclick(function(){
+    $(this).hide();
+});
+</pre>
+    </div>
+    <p>Notice how similar that code looks compared to the ready document event. We've seen examples of the
+        <code>.show()</code> and <code>.hide()</code> effects, but jQuery offers a broad range, such as:</p>
+    <ul class="description">
+        <li><code>toggle()</code>- toggle between showing and hiding an element</li>
+        <li><code>fade()</code>- fade an element into and out of visibility, also <code>fadeIn()</code> and
+            <code>fadeOut()</code></li>
+        <li><code>slideDown()</code>- slide an element down. Can also <code>slideUp()</code></li>
+        <li><code>animate()</code>- create a custom animation for an element</li>
+        <li><code>stop()</code>- stop an animation before it's finished</li>
+    </ul>
+    <p>And so much more. Too much jQuery goodness to cover in a single blog post&#8211 come back next week for part 2 to
+        learn about manipulating HTML, traversing HTML, and maybe even AJAX. TTYL, HTML!</p>
+</body>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
+
+</html>
