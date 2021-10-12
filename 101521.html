@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 7</header>
+<em>jQuery (part 2) & Jest &#8211 Friday,
+    Oct. 15, 2021</em>
+
+<body>
+    <p>
+        In the <a href="http://blog.le-sage.me/090321.html">first blog post</a> I made, I briefly explained what a
+        document object model (DOM) is. To reiterate, the DOM represents an XML/HTML document that has a tree-like
+        structure where each node is treated as an object. Objects can have branches, like how a
+        <code>&lt;body&gt;</code> can contain a <code>&lt;nav&gt;</code> and <code>&lt;section&gt;</code>, which
+        themselves can branch to more objects, and so on... you see the picture. Think of the DOM as an interface which
+        allows us to easily alter the structure or content of the web page. You can read more about its importance from
+        <a href="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom">Digital Ocean's
+            documentation</a>. Understanding this term is necessary for what we are about to discuss next: jQuery
+        traversals.
+    </p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/e5/e8/61/e5e8614f08c7a168807f4373da82976f.jpg" class="blogimg">
+        <img src="https://info343.github.io/img/html/dom-tree.jpg" class="blogimg">
+    </div>
+    <p>Once again, all information has been gathered from the <a
+            href="https://api.jquery.com/category/traversing/">jQuery documentation</a> as well as <a
+            href="https://www.w3schools.com/jquery/jquery_traversing.asp">W3 Schools</a>. Traversing through a webpage
+        document to find a specific element is done so by following the path of its related elements; we can move up the
+        branches to find an elements ancestors, or down to see its descedants, or even laterally to find an element's
+        siblings. It's like a big, happy family tree, but with HTML. What does this have to do with jQuery? Well, jQuery
+        supplements methods to help us navigate the DOM with ease. </p>
+    <p>As a preview of jQuery traversal methods, consider:</p>
+    <ul class="description">
+        <li><code>children()</code>- return all directly related children of the element</li>
+        <li><code>find()</code>- return the descendants of a selected element</li>
+        <li><code>has()</code>- return elements that have 1+ elements inside of them</li>
+        <li><code>next()</code>- return thr next sibling of the selected element. Also <code>prev()</code></li>
+        <li><code>parent()</code>- return the selected element's direct parents</li>
+        <li><code>parents()</code>- return all of the selected element's ancestors</li>
+    </ul>
+    <p>This begs the question: what's the point of traversal, anyway? One of the most useful reasons for traversal I
+        have found is for testing. Often times, us programmers want to ensure that a certain element renders/text
+        appears/etcetera beyond just loading our website and looking for the event to take place. A popular JavaScript
+        testing framework to use is (drumroll, please...) Jest (queue fanfair).</p>
+
+    <p>Jest and jQuery get along particularly nicely. Look, it's even in <a
+            href="https://jestjs.io/docs/tutorial-jquery">Jest's documentation</a>. Here's how it works: Jest allows us
+        to mock functions between code. By mocking we can isolate elements and control their dependencies. Say we want
+        to test what happens on a button click. That would look like this:</p>
+    <div class="code-container">
+        <pre>
+describe('Login button component is clicked', () => {
+    it('click event', () => {
+        const mockCallBack = jest.fn();
+              
+        const button = shallow((&lt;Button onClick={mockCallBack}&gt;Login&lt;/Button&gt;));
+        button.find('loginButton').simulate('click');
+        expect(mockCallBack.mock.calls.length).toEqual(1);
+    });
+});
+    </pre>
+    </div>
+    <p>Here, we're mocking that button click callback with Jest, using jQuery to <code>find()</code> the login button
+        and stimulate the
+        click event, and expecting that our mocked function has been triggered. The 'shallow' you see in the code
+        snippet is an Enzyme API that allows for rendering of components for such test cases; the element is only render
+        one level deep. Compared to the depth and complexity of the DOM tree, the rendered element is Shallow. Those
+        witty developers. "But Chelsea!" you say, "I've never heard of those terms before, explain!" Listen, I would talk about
+        Enzyme and Shallow more if I could, but jQuery and Jest are the star of this blog post.</p>
+</body>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
+</html>
