@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 10</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 10</header>
+<em>Image Filters &#8211 Friday,
+    Nov. 15, 2021</em>
+
+<body>
+    <p>I'll be honest-- I miss CSS. Secretly I think I'm right-brained, because what's not to love about visual stuff!?
+        So
+        this blog is going to be my opportunity to explore more of the wacky and wonderful whims that CSS can fulfill,
+        particularly with <i>image filters</i>. Let's take this picture of our robot friend here and see what we can do
+        with it:</p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="blogimg">
+    </div>
+    <p>For starters, CSS has this beautiful thing called the <a
+            href="https://www.w3schools.com/cssref/css3_pr_filter.asp">filter property</a> that we can use to specify
+        visual effects like grayscale, contrast, blur, opacity, etcetera, which is typically used on images.</p>
+    <p>Here are some of the options that filter styling offers us:</p>
+    <ul class="description">
+        <li><code>blur(px)</code>- blurs the image by a pixel amount</li>
+        <li><code>contrast(%)</code>- depending on the %, increases or decreases contrast. Default contrast is 100%;
+            lower reduces contrast, higher increases the value</li>
+        <li><code>grayscale(%)</code>- % is optional. Used to determine the balance of black & white</li>
+        <li><code>hue-rotate(deg)</code>- probably to coolest one. Rotates the hue around the color circle as specified
+            by the degree.</li>
+        <li><code>invert(%)</code>- inverts the image from 0-100%. 100% is completely inverted</li>
+        <li><code>sepia(%)</code>- applies a sepia filter as strong as the specified %</li>
+    </ul>
+    <p>With these, we can try some new styles on our robot friend!</p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:grayscale()">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:brightness(65%)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:invert(1)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:sepia(1)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:blur(2.5px)">
+    </div>
+    <p>Above, we are applying a grayscale, lowering brightness, inverting, adding a sepia filter, and then blur filter,
+        in that order. This just looks
+        like defining a filter for the image style, such as <code>style="filter:brightness(65%)"</code>. Remember how I
+        said hue-rotate is the coolest one? Let's see what it looks like to rotate in increments of 90 degrees around
+        the color
+        wheel:</p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:hue-rotate(0deg)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:hue-rotate(90deg)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:hue-rotate(180deg)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:hue-rotate(270deg)">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="sm-blogimg"
+            style="filter:hue-rotate(360deg)">
+
+    </div>
+    <p>Swanky! That's achieved by setting <code>style="filter:hue-rotate(0deg)"</code> and increasing the
+        <code>deg</code>value by 90 each time. But that's not all we can do! We can apply multple filters at once, too:
+    </p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="blogimg"
+            style="filter:hue-rotate(120deg) invert(1) contrast(150%) drop-shadow(8px 8px 10px cyan)">
+    </div>
+    <p>This is achieved by simply tacking one filter after another:</p>
+    <div class="code-container">
+        <pre>
+&lt;img src="https://i.pinimg.com/564x/95/c1/f2/95c1f28ae26fd250572becf8080e7ece.jpg" class="blogimg"
+    style="filter:hue-rotate(120deg) invert(1) contrast(150%) drop-shadow(8px 8px 10px cyan)"&gt;
+        </pre>
+    </div>
+    <p>But I wanted to learn more about the logic of hue-rotate. I did something similar in java my freshman year but
+        have since then forgotten the logic behind this. While <a
+            href="https://www.quackit.com/css/functions/css_hue-rotate_function.cfm">reading more</a> on the hue-rotate
+        function, I found that its official syntax is:</p>
+    <div class="code-container">
+        <pre>
+hue-rotate() = hue-rotate( [ &lt;angle&gt; | &lt;zero&gt; ]? )
+        </pre>
+    </div>
+    <div style="text-align: center;">
+        <img src="https://www.quackit.com/pix/stock/color_wheel_hsl.png" class="sm-blogimg">
+    </div>
+    <p>Where <code>angle</code> determines how much to rotate the angle. This could be in the terms of degrees, radians,
+        gradians, or turns. We can see from the graphic above that red starts at angle 0. In the terms of our robot, who
+        starts as yellow-orange (~45 degrees, according the wheel), incrementing by 90 brings us to ~135, which is green. The above examples of the
+        robot using the hue-rotate filter reflects these findings! Oddly enough, the Internet Explorer browser does not support this type of CSS.
+    </p>
+    <p>Seeing all of these colorful images made me happy. Compared to where we are in the semester, this is pretty elementary stuff, but who doesn't love rainbows!?</p>
+</body>
+
+</html>

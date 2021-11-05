@@ -59,6 +59,11 @@ p {
     width: auto;
 }
 
+.sm-blogimg {
+    max-height: 15rem;
+    width: auto;
+}
+
 .code-container {
     display: flex;
     justify-content: center;
