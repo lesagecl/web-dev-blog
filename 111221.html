@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 11</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 11
+</header>
+<em>React-Redux Hooks &#8211 Friday,
+    Nov. 12, 2021</em>
+
+<body>
+    <p>
+        Yarr, behold, matey! We be learnin' about hooks today. Specficially, <a
+            href="https://react-redux.js.org/api/hooks">React Redux hooks</a>. To begin, what is a hook? Simply put,
+        they are functions that allow us to use state and other React features without explicitely having to write a
+        class; with them we have access to a function's lifecyle features and components. So rather than having to
+        switch between different components and classes, and render their props, we can use a hook instead. The list of
+        React Redux hook APIs includes:
+    </p>
+    <ul class="description">
+        <li><code>useSelector()</code>- retrieve data from a store state via a use function</li>
+        <li><code>useDispatch()</code>- for dispatching actions</li>
+        <li><code>useStore()</code>- get the store that was passed as reference to the Provider</li>
+    </ul>
+    <p>Now we can explore the question of how hooks work. Here's a high-level overview of the hook mechanism:</p>
+    <div style="text-align: center;">
+        <!-- <img src="https://i.fbcd.co/products/resized/resized-1500-1000/952792e8ae8090fd95ace68fbede6ade4f4bb7c6187008b3ca6a3117949b7dc9.webp"
+            class="blogimg"> -->
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m5BdPzhS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://i.imgur.com/riadAin.gif"
+            class="blogimg">
+    </div>
+    <p>The main three pieces we see here are for storing the state, getting the state, and then changing the state.
+        These relate to the store, getState() method, and the action and reducer methods, respectively. Foremost, the
+        dispatcher is the object that contains our hook functions, and the provider is what helps us save the state of
+        the store. </p>
+    <p>To begin implementing hooks, we need to start with making the store accessible throughout the component:</p>
+    <div class="code-container">
+        <pre>
+const store = createStore(rootReducer)
+
+ReactDOM.render(
+    &lt;Provider store={store}&gt;
+        &lt;App /&gt;
+    &lt;/Provider&gt;,
+    document.getElementById('root')
+)
+        </pre>
+    </div>
+    <p>
+        Then, say we want to created a todo list and render those text items into our app. For this we would use props
+        within a useSelector to assign the todo items:
+    </p>
+    <div class="code-container">
+        <pre>
+import React from 'react'
+import { useSelector } from 'react-redux'
+            
+export const TodoItem = (props) => {
+    const todo = useSelector((state) => state.todoItems[props.id])
+    return &lt;div&gt;{todo.text}&lt;/div&gt;
+}            
+        </pre>
+    </div>
+    <p>
+        So thus the selector only depends on the state. When this is the case, we just need to make sure to declare this
+        selector outside of the component, which ensures that the same instance of the selector is used for each
+        app render. With useDispatch, we can dispatch any item we want to the store. This is done by adding an action as
+        an argument. Full disclosure, I'm not sure if this works in this exact scenario, but it would look something
+        like
+        this:
+    </p>
+    <div class="code-container">
+        <pre>
+import React from 'react'
+import { useSelector } from 'react-redux'
+            
+export const TodoItem = (props) => {
+    const todo = useSelector((state) => state.todoItems[props.id])
+    const dispatch = useDispatch()
+
+    return (
+        &lt;div&gt;{todo.text}&lt;/div&gt;
+        &lt;button&gt;{dispatch({type: "SET_TODO", paylod: "Buy milk"})}&lt;/button&gt;
+    )
+}            
+        </pre>
+    </div>
+    <p>Lastly, useSelector() usually takes the place of useStore(). There can be times when the store needs to be
+        accessed, but for the most part, useSelector() gets the job done.</p>
+</body>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
+</html>
