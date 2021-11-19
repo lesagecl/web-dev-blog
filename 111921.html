@@ -33,11 +33,11 @@
         <img src="https://i.pinimg.com/564x/88/15/db/8815db57ea8bc6c82697c0f0b03065d2.jpg" class="blogimg">
     </div>
     <p>
-        One issue is that whenever a parent component rerenders, its children components rerender, too. To avoid this,
+        One issue is that whenever a parent component rerenders, its children components rerender too. To avoid this,
         the <code>React.memo</code> component can be used. According to the <a
             href="https://reactjs.org/docs/react-api.html#reactmemo"> React documentation</a>, <code>React.memo</code>
         is a higher order component that memoizes results of a call, meaning that rather than rerendering a component,
-        the last rendered result is used instead. In short, <code>React.memo</code> only rerenders when props change. So
+        the last rendered result is used instead. Kind of like cached memory. In short, <code>React.memo</code> only rerenders when props change. So
         if we have a <code>Counter</code> component, we would say:
     </p>
     <div class="code-container">
@@ -53,7 +53,7 @@ const Counter = React.memo(function Counter({ name, value }) {
         </pre>
     </div>
     <p>
-        So that if we had multiple counters, only the one whose value has changed would be rerendered. Preventing
+        So that if we had multiple counters, only the one whose value has changed would be rerendered, rather than all counters. Preventing
         rerendering becomes a little more complicated when props like <code>onClickIncrement</code> are passed, however;
         the prop changes from every rerender. To solve this, we can use a <code>useCallback</code> hook instead to
         memoize. This is what that would look like:
@@ -69,15 +69,15 @@ const Counter = React.memo(function Counter({ name, value }) {
     </div>
     <p>
         So now when counter A changes value, it is the only counter to rerender. This approach tackles the issue of
-        unintentional prop changes triggering component rerenders. Another issue occurs with passing object literals as
+        unintentional prop changes triggering multiple component rerenders. Another issue occurs with passing object literals as
         props, because every time <code>App</code> renders, a new object must be created. A quick solution to this is,
         when applicable, simply creating the object once outside of the <code>App</code> component. This works in the
-        case that the object stays the same, like a header. For dynamic objects, we can once again use a
+        case that the object stays the same (static), like a header with a determined styling. For dynamic objects, we can once again use a
         <code>useMemo</code> hook. In this case, the header component would only rerender if, say, the font was changed,
         rather than every time a counter changes.
     </p>
     <p>
-        Overall, it seems like there's a lot of room for inefficiency-- this blog barely scracthed the surface of
+        Overall, it seems like there's a lot of room for inefficiency-- this blog barely scratched the surface of
         possible rerendering scenarios. There's probably a fine line between excessive optimization and functionally
         working code. There's a lot more to investigate and understand about rerendering, but tomorrow is Thanksgiving
         break and my brain is <i>rendered</i> useless right now.
