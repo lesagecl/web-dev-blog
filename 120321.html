@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 13</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="smiley-face.png" />
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 3;">
+            <li class="navli"><a href="index.html" class="navhref">Home</a></li>
+            <li class="navli"><a href="https://www.linkedin.com/in/chelsea-le-sage/" class="navhref">LinkedIn</a></li>
+            <li class="navli"><a href="https://github.com/lesagecl/web-dev-blog" class="navhref">GitHub</a></li>
+        </ul>
+        </div>
+    </nav>
+</head>
+<header>
+    Week 13
+</header>
+<em>onClick Event Handling &#8211 Friday,
+    Dec. 3, 2021</em>
+
+<body>
+    <p>For this blog I referenced the <a href="https://reactjs.org/docs/handling-events.html">React documentation</a>
+        and <a
+            href="https://upmostly.com/tutorials/react-onclick-event-handling-with-examples#update-state-in-onclick-event-handler">this
+            tutorial</a> to learn more about onClick event handling. This seems like a good area to research because I
+        will need to implement multiple onClick events for my project. An onCLick event handler is more versatile than
+        just triggering a function when a button is clicked. For example, we can also use onClick to call multiple
+        functions, change the state, or pass values. This blog will be going over the uses of some of these cases as
+        well as provide code examples for these scenarios.
+    </p>
+    <div style="text-align: center;">
+        <img src="https://i.pinimg.com/564x/36/40/09/364009de0899a152807f0373414851bb.jpg" class="blogimg">
+        <!-- <img src="https://i.pinimg.com/564x/88/15/db/8815db57ea8bc6c82697c0f0b03065d2.jpg" class="blogimg"> -->
+    </div>
+    <p>
+        The first application we'll cover is calling multiple functions in an onClick call. There are two approaches we
+        can take to achieve this. The first is executing a code block within the onClick handler. The second option is
+        simply to call multiple functions within the onClick. Let's say we have this button:
+    </p>
+    <div class="code-container">
+        <pre>
+&lt;button onClick={() =&gt; {
+    this.greeting()
+    this.setState({name: 'Jimi'});
+}}>
+    Click here for a greeting
+&lt;/button&gt;
+        </pre>
+    </div>
+    <p>This illustrates the option of calling multiple functions within the onClick handler. Of course, we could always
+        just set the state within the greeting function as well, but you get the point; we're able to call multiple
+        functions with a singular onClick event. We can follow this similar formula to update a component's state via an
+        onClick event. For this scenario, we'll be updating the state with the button's value each time it's clicked,
+        but other values, like those from loops, can be used as well.
+    </p>
+    <div class="code-container">
+        <pre>
+const [count, setCount] = useState(0);
+return(
+    &lt;button onClick={() => setCount(5)}&gt;
+        Set Value
+    &lt;/button&gt;
+);
+        </pre>
+    </div>
+    <p>
+        Lastly, we can also pass values from our button as an argument to a function. This is pretty similar to
+        onChange.
+    </p>
+    <div class="code-container">
+        <pre>
+return(
+    &lt;button value="PANIC" onClick={e => alert(e.target.value)}&gt;
+        Panic Button
+    &lt;/button&gt;
+);
+        </pre>
+    </div>
+    <p>
+        Not the most useful button, but it does illustrate how the value can be pulled directly fromn the button and
+        passed through as a function argument. According to the React documentation, <i>e</i> is considered a
+        <i>synthetic event</i>, which isn't exactly a native event, but does contain useful data about the event, like
+        in this case, the target value. <i>e.target.value</i> is the value we define for the button, "PANIC". To
+        my understanding, any UI component with an onClick event handler is considered a button, not only those
+        explicitly stated as a &lt;button&gt;. Still, there's a lot more to events than this. We can also concern
+        ourselves with binding, but that's kind of scary. Regardless, event handlers like onClick are at the core of
+        React; after all, it's how users actually interact with the app.
+    </p>
+
+</body>
+<div style="text-align: right;">
+    <img src="smiley-face.png" style="height: 5rem">
+</div>
+
+</html>
